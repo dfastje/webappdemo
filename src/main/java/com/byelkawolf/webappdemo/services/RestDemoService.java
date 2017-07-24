@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class RestDemoService {
 
     /**
-     * Fibonacci sequence. Written before because I was just playing around with
+     * Fibonacci sequence. Written before writing the montecarlo simulation because I was just playing around with
      * Spring boot.
      * @param nthNum
      * @return
@@ -35,9 +35,12 @@ public class RestDemoService {
      * @return
      */
     public double AreaRatio(double radius, int numPoints) {
+        if(numPoints<1) {
+            numPoints = 1; // FIXME: 7/23/2017 If program is expanded, change how 0 and negative inputs are handled.
+        }
         Cartesian2dPoint[] points = new Cartesian2dPoint[numPoints];
-        double numInCircle = 0.00;
 
+        double numInCircle = 0.00;
         for(Cartesian2dPoint point:points){
             point = new Cartesian2dPoint(radius);
             if(point.isInCircle()){

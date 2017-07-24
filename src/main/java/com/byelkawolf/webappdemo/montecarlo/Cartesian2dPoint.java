@@ -2,6 +2,11 @@ package com.byelkawolf.webappdemo.montecarlo;
 
 /**
  * Data type for the points in a montecarlo simulation
+ *
+ * Cartesian datapoint with an additional method to check if the point is within a circle of the given
+ *      radius (this implies a comparison between a square of side length = 2*radius and the circle).
+ *
+ * If the program is expanded, it will need an abstract "Point" class to accommodate other coordinate systems.
  */
 public class Cartesian2dPoint {
     private final double radius;
@@ -36,7 +41,6 @@ public class Cartesian2dPoint {
     public double getY() {
         return y;
     }
-
 
     public boolean isInCircle() {
         return inCircle;
