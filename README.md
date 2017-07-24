@@ -16,7 +16,7 @@ endpoints in either a tool like Postman or simply from a web browser.
   in use on your computer, you will need to change the "server.port" line in the 
   "application.properties" file.
   * "http://localhost:8090" will be left off of the URLs for now on.
-* Start the application as shown in the "ImportAndBuildingImgs" directory
+* Start the application as shown in the image in "ImportAndBuildingImgs" directory
 * Run the application: **"interview/montecarlo/{radius}/{numPoints}"**
   * {radius} is a positive, non-zero double.
   * {numPoints} is a positive, non-zero int.
