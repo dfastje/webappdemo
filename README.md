@@ -25,3 +25,10 @@ endpoints in either a tool like Postman or simply from a web browser.
   * The theoretical ratio is pi/4 = 0.7854 and increasing the number of points will
   increase the precision of the experiment. 
   * Units are left off of the radius to emphasize that the radius doesn't matter.
+* **Dockerize:** to create a docker container with the webapp, run the following commands 
+    from the command prompt in the project home directory.
+    ```$xslt
+    docker build -f Dockerfile -t docker-example-webapp .
+    docker images
+    docker run -p 8090:8090 docker-example-webapp
+    ```  
