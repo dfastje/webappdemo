@@ -5,10 +5,7 @@ import com.byelkawolf.webappdemo.services.RestDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by dfast on 7/11/2017.
@@ -49,9 +46,9 @@ public class RestDemoController {
      * @param numPoints
      * @return
      */
-    @RequestMapping(value = "/montecarlo/{radius}/{numPoints}", method = RequestMethod.GET)
-    public @ResponseBody String montecarlo(@PathVariable double radius,
-                                           @PathVariable int numPoints){
+    @RequestMapping(value = "/montecarlo", method = RequestMethod.GET)
+    public @ResponseBody String montecarlo(@RequestParam double radius,
+                                           @RequestParam int numPoints){
         double ratio = restDemoService.AreaRatio(radius,numPoints);
         String retVal = "The ratio of the area in a circle to a square is " + ratio
                         + " for radius " + radius
